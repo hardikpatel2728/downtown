@@ -26,9 +26,10 @@ class _homepageState extends State<homepage> {
       'Content-type': 'application/json',
       'Accept': 'application/json',
     };
+
     var url =
         Uri.parse('https://www.admin.raghuveergroup.com/getallcategory.php');
-    var response = await http.post(url,headers:Headers );
+    var response = await http.post(url);
 
     debugPrint(response.body);
     var l = jsonDecode(response.body);
@@ -109,8 +110,8 @@ class _homepageState extends State<homepage> {
                                       SizedBox(
                                         height: 125,
                                       ),
-                                      SvgPicture.network("${lan?.msg![index].imageUrl}")
-                                      //Text("${lan?.msg![index].category}",style: TextStyle(color: Colors.white,fontSize: 20,fontWeight: FontWeight.bold),)
+                                      //SvgPicture.network("${lan?.msg![index].imageUrl}")
+                                      Text("${lan?.msg![index].category}",style: TextStyle(color: Colors.white,fontSize: 20,fontWeight: FontWeight.bold),)
                                     ],
                                   ),
                                   ),
